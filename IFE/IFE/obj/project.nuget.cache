@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "47AEAFGInEa1kUW2dROKzY1w8nF8otHPWmqx8gSpW7Dfci7Hjq8kdO+LItREiWAGy/MA1a8hJ+yAJLkIXG7m8g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\matta\\Documents\\GitHub\\ImprovedFileEncrypter\\IFE\\IFE\\IFE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matta\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512"
+  ],
+  "logs": []
+}
