@@ -18,3 +18,23 @@ C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcorea
 C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.dll
 C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.pdb
 C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.genruntimeconfig.cache
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\bin\Debug\netcoreapp3.1\IFE.exe
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\bin\Debug\netcoreapp3.1\IFE.deps.json
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\bin\Debug\netcoreapp3.1\IFE.runtimeconfig.json
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\bin\Debug\netcoreapp3.1\IFE.runtimeconfig.dev.json
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\bin\Debug\netcoreapp3.1\IFE.dll
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\bin\Debug\netcoreapp3.1\IFE.pdb
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.csproj.AssemblyReference.cache
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE_MarkupCompile.cache
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE_MarkupCompile.lref
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.g.resources
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.AssemblyInfoInputs.cache
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.AssemblyInfo.cs
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.csproj.CoreCompileInputs.cache
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.dll
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.pdb
+C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE\IFE\obj\Debug\netcoreapp3.1\IFE.genruntimeconfig.cache

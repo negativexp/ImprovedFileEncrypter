@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "47AEAFGInEa1kUW2dROKzY1w8nF8otHPWmqx8gSpW7Dfci7Hjq8kdO+LItREiWAGy/MA1a8hJ+yAJLkIXG7m8g==",
+  "dgSpecHash": "2TzrLc1z0i3Qwb8d4zRAQFq6mkj/VnWCReOdfeqnYbBZfDAuTLm52NAy/+ne9FveTTmsyd2g/emphVp8I/cK+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matta\\Documents\\GitHub\\ImprovedFileEncrypter\\IFE\\IFE\\IFE.csproj",
+  "projectFilePath": "C:\\Users\\matyas.schuller\\OneDrive - Střední škola EDUCHEM, a.s\\Dokumenty\\GitHub\\ImprovedFileEncrypter\\IFE\\IFE\\IFE.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\matta\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.29\\microsoft.netcore.app.host.win-x64.3.1.29.nupkg.sha512"
+    "C:\\Users\\matyas.schuller\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.27\\microsoft.netcore.app.host.win-x64.3.1.27.nupkg.sha512",
+    "C:\\Users\\matyas.schuller\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\matyas.schuller\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\matyas.schuller\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": []
 }
