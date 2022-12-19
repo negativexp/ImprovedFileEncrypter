@@ -1,10 +1,16 @@
 {
   "runtimeOptions": {
-    "tfm": "netcoreapp3.1",
-    "framework": {
-      "name": "Microsoft.WindowsDesktop.App",
-      "version": "3.1.0"
-    },
+    "tfm": "net6.0",
+    "frameworks": [
+      {
+        "name": "Microsoft.NETCore.App",
+        "version": "6.0.0"
+      },
+      {
+        "name": "Microsoft.WindowsDesktop.App",
+        "version": "6.0.0"
+      }
+    ],
     "additionalProbingPaths": [
       "C:\\Users\\matyas.schuller\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\matyas.schuller\\.nuget\\packages",
