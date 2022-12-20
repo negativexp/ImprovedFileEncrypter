@@ -26,6 +26,7 @@ namespace IFE_6._0_
         const int chunkSize = 500000;
         string pass = "";
         BackgroundWorker worker = new BackgroundWorker();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -148,33 +149,36 @@ namespace IFE_6._0_
 
         private void DecryptFile(string inputFile, string password)
         {
-            string path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileNameWithoutExtension(inputFile);
-            byte[] salt = new byte[16];
-            using(FileStream input = new FileStream(inputFile, FileMode.Open))
+            try
             {
-                input.Read(salt, 0, salt.Length);
-                using(var derive = new Rfc2898DeriveBytes(password, salt, 5000))
+                string path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileNameWithoutExtension(inputFile);
+                byte[] salt = new byte[16];
+                using (FileStream input = new FileStream(inputFile, FileMode.Open))
                 {
-                    byte[] key = derive.GetBytes(32);
-                    byte[] iv = derive.GetBytes(16);
-                    using(var output = new FileStream(path, FileMode.Create, FileAccess.Write))
+                    input.Read(salt, 0, salt.Length);
+                    using (var derive = new Rfc2898DeriveBytes(password, salt, 5000))
                     {
-                        using(var aes = Aes.Create())
+                        byte[] key = derive.GetBytes(32);
+                        byte[] iv = derive.GetBytes(16);
+                        using (var output = new FileStream(path, FileMode.Create, FileAccess.Write))
                         {
-                            aes.Key = key;
-                            aes.IV = iv;
-                            using(var decryptor = aes.CreateDecryptor())
+                            using (var aes = Aes.Create())
                             {
-                                using(var cryptoStream = new CryptoStream(output, decryptor, CryptoStreamMode.Write))
+                                aes.Key = key;
+                                aes.IV = iv;
+                                using (var decryptor = aes.CreateDecryptor())
                                 {
-                                    //500000 bytes = 1mb
-                                    byte[] buffer = new byte[chunkSize];
-                                    int bytesRead;
-                                    long totalBytesWritten = 0;
-                                    while ((bytesRead = input.Read(buffer, 0, chunkSize)) > 0)
+                                    using (var cryptoStream = new CryptoStream(output, decryptor, CryptoStreamMode.Write))
                                     {
-                                        cryptoStream.Write(buffer, 0, bytesRead);
-                                        totalBytesWritten += bytesRead;
+                                        //500000 bytes = 1mb
+                                        byte[] buffer = new byte[chunkSize];
+                                        int bytesRead;
+                                        long totalBytesWritten = 0;
+                                        while ((bytesRead = input.Read(buffer, 0, chunkSize)) > 0)
+                                        {
+                                            cryptoStream.Write(buffer, 0, bytesRead);
+                                            totalBytesWritten += bytesRead;
+                                        }
                                     }
                                 }
                             }
@@ -182,8 +186,22 @@ namespace IFE_6._0_
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong with decrypting the file. This error might be caused by invalid password!", "Decrypting error");
+            }
 
 
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Designed to Encrypt and Decrypt files using AES encryption." + Environment.NewLine + Environment.NewLine + "Tip: Use a password that you will remember because I'm not responsible for any lost files.","Created by newoutsider <3");
         }
     }
 }

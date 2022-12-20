@@ -10,39 +10,52 @@
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
             <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.RowSpan="2" Margin="5" BorderBrush="Black" BorderThickness="1">
-            <ListBox x:Name="listboxFiles" KeyDown="listboxFiles_KeyDown" SelectionMode="Extended"/>
-        </Border>
-        <Grid Grid.Column="1" Drop="Grid_dnd" AllowDrop="True">
-            <Border BorderBrush="Black" BorderThickness="1" Margin="5" Drop="Grid_dnd" AllowDrop="True">
-                <TextBlock FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Text="drag and drop"/>
-            </Border>
-        </Grid>
-        
-        
-        
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Progress: 0% 0/0" x:Name="TextBlockProgress" HorizontalAlignment="Left"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Last deleted:" x:Name="TextBlockLastDeleted" HorizontalAlignment="Left" Margin="110,0,0,0"/>
-        <Grid Grid.Column="1" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="0.1*"/>
-            </Grid.RowDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="Program">
+                <MenuItem Header="About" Click="About_Click"/>
+                <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+        </Menu>
 
-            <Grid Grid.Row="1" Width="auto" Height="auto">
-                <TextBlock Text="Password:" Margin="0,0,332,0"/>
-                <TextBox x:Name="TextBoxPassword" Margin="68,0,70,0"/>
-                <Button Width="70" Content="start" Click="Button_Click" HorizontalAlignment="Left" Margin="330,0,0,0"/>
+        <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Black" Margin="5">
+            <Grid>
+                <ListBox x:Name="listboxFiles" KeyDown="listboxFiles_KeyDown" SelectionMode="Extended"/>
             </Grid>
-        </Grid>
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" BorderThickness="1" BorderBrush="Black" Margin="5">
+            <Grid Drop="Grid_dnd" AllowDrop="True" Background="White">
+                <TextBlock FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Text="drag and drop"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="3" BorderThickness="1" BorderBrush="Black" Margin="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Progress: 0% 0/0" x:Name="TextBlockProgress" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Text="Last deleted:" x:Name="TextBlockLastDeleted" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="3" BorderThickness="1" BorderBrush="Black" Margin="5">
+            <DockPanel LastChildFill="True">
+                <TextBlock Text="Password:" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
+                <Button Width="70" Content="start" Click="Button_Click" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0"/>
+                <TextBox x:Name="TextBoxPassword" VerticalAlignment="Center" Margin="0, 0, 10, 0"/>
+            </DockPanel>
+        </Border>
     </Grid>
 </Window>

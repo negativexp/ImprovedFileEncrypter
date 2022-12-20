@@ -19,3 +19,24 @@ C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitH
 C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).pdb
 C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).genruntimeconfig.cache
 C:\Users\matyas.schuller\OneDrive - Střední škola EDUCHEM, a.s\Dokumenty\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\ref\IFE(6.0).dll
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\bin\Debug\net6.0-windows\IFE(6.0).exe
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\bin\Debug\net6.0-windows\IFE(6.0).deps.json
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\bin\Debug\net6.0-windows\IFE(6.0).runtimeconfig.json
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\bin\Debug\net6.0-windows\IFE(6.0).dll
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\bin\Debug\net6.0-windows\IFE(6.0).pdb
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).csproj.AssemblyReference.cache
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0)_MarkupCompile.cache
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0)_MarkupCompile.lref
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).g.resources
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).AssemblyInfoInputs.cache
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).AssemblyInfo.cs
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).csproj.CoreCompileInputs.cache
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).dll
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\refint\IFE(6.0).dll
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).pdb
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\IFE(6.0).genruntimeconfig.cache
+C:\Users\matta\Documents\GitHub\ImprovedFileEncrypter\IFE(6.0)\IFE(6.0)\obj\Debug\net6.0-windows\ref\IFE(6.0).dll
