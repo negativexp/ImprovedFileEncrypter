@@ -13,7 +13,7 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -41,21 +41,44 @@
 
         <Border Grid.Column="0" Grid.Row="3" BorderThickness="1" BorderBrush="Black" Margin="5">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Column="0" Text="Progress: 0% 0/0" x:Name="TextBlockProgress" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="Last deleted:" x:Name="TextBlockLastDeleted" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Border BorderBrush="Black" BorderThickness="0, 0, 0, 1" Grid.Row="0">
+                    <TextBlock Text="Progress: 0% 0/0" x:Name="TextBlockProgress" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </Border>
+                <Border Grid.Row="1" >
+                    <TextBlock Text="Last deleted:" x:Name="TextBlockLastDeleted" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                </Border>
             </Grid>
         </Border>
 
         <Border Grid.Column="1" Grid.Row="3" BorderThickness="1" BorderBrush="Black" Margin="5">
-            <DockPanel LastChildFill="True">
-                <TextBlock Text="Password:" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
-                <Button Width="70" Content="start" Click="Button_Click" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0"/>
-                <TextBox x:Name="TextBoxPassword" VerticalAlignment="Center" Margin="0, 0, 10, 0"/>
-            </DockPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0, 0, 0, 1">
+                    <Grid>
+                        <TextBlock Text="Password:" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
+                        <TextBox x:Name="TextBoxPassword" Margin="76,2,10,2"/>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1">
+                    <Grid>
+                        <TextBlock Text="Buffer size: " VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
+                        <TextBlock Text="Bytes" VerticalAlignment="Center" Margin="268,0,81,0"/>
+                        <Button Content="start" Click="Button_Click" VerticalAlignment="Center" Margin="307,0,5,0" Height="20" RenderTransformOrigin="0.5,0.5"/>
+                        <TextBox x:Name="TextBoxBuffer" Margin="76,5,120,4" Height="20" Text="4096"/>
+                    </Grid>
+                </Border>
+            </Grid>
         </Border>
     </Grid>
 </Window>

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,15 +26,22 @@ namespace IFE_6._0_
     /// </summary>
     public partial class MainWindow : Window
     {
-        const int chunkSize = 500000;
         string pass = "";
+        // 4096 bytes = 4kb
+        static int _buffer = 4096;
         BackgroundWorker worker = new BackgroundWorker();
+        static List<string> ListBoxitems = new List<string>();
+        static string _Title = "IFE 2.0 - made by newoutsider <3";
+
 
         public MainWindow()
         {
             InitializeComponent();
             worker.WorkerReportsProgress = true;
             worker.DoWork += worker_DoWork;
+            listboxFiles.ItemsSource = ListBoxitems;
+            this.Title = _Title;
+
         }
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -50,6 +60,7 @@ namespace IFE_6._0_
                     this.Dispatcher.Invoke(() =>
                     {
                         TextBlockProgress.Text = "Progress: " + "100%" + " " + listboxFiles.Items.Count + "/" + listboxFiles.Items.Count;
+                        MessageBox.Show("Done." + Environment.NewLine + Environment.NewLine + "Your files are encrypted...", "IFE 2.0");
                     });
                 }
             }
@@ -57,10 +68,10 @@ namespace IFE_6._0_
 
         private void displayProgress(double progress, int count)
         {
-            this.Dispatcher.Invoke(() =>
+            this.Dispatcher.BeginInvoke(new Action(() => 
             {
-                TextBlockProgress.Text = "Progress: " + progress + "%" + " " + count++ + "/" + listboxFiles.Items.Count;
-            });
+                TextBlockProgress.Text = "Progress: " + progress + "%" + " | " + count++ + "/" + listboxFiles.Items.Count;
+            }));
         }
 
         private void Grid_dnd(object sender, DragEventArgs e)
@@ -70,8 +81,9 @@ namespace IFE_6._0_
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
                 foreach (string s in files)
                 {
-                    listboxFiles.Items.Add(s);
+                    ListBoxitems.Add(s);
                 }
+                listboxFiles.Items.Refresh();
             }
         }
 
@@ -84,7 +96,8 @@ namespace IFE_6._0_
                     while (listboxFiles.SelectedItems.Count != 0)
                     {
                         TextBlockLastDeleted.Text = "Last deleted: " + System.IO.Path.GetFileName(listboxFiles.SelectedItems[0].ToString());
-                        listboxFiles.Items.Remove(listboxFiles.SelectedItems[0]);
+                        ListBoxitems.Remove(listboxFiles.SelectedItems[0].ToString());
+                        listboxFiles.Items.Refresh();
                     }
                 }
             }
@@ -92,9 +105,27 @@ namespace IFE_6._0_
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            pass = TextBoxPassword.Text;
-            TextBlockProgress.Text = "Progress : 0%";
-            worker.RunWorkerAsync();
+            try
+            {
+                pass = TextBoxPassword.Text;
+                int buffer = Convert.ToInt32(TextBoxBuffer.Text);
+                if(buffer <= 0)
+                {
+                    buffer = 4096;
+                    TextBoxBuffer.Text = "4096";
+                }
+                TextBlockProgress.Text = "Progress : 0% | 0/0";
+                worker.RunWorkerAsync();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Please enter a vaild buffer size...", "IFE 2.0");
+            }
+        }
+
+        private void ResetNumbers()
+        {
+
         }
 
         private void EncryptFile(string inputFile, string password, int count)
@@ -128,10 +159,10 @@ namespace IFE_6._0_
                                 using (var cryptoStream = new CryptoStream(output, encryptor, CryptoStreamMode.Write))
                                 {
                                     //500000 bytes = 1mb
-                                    byte[] buffer = new byte[chunkSize];
+                                    byte[] buffer = new byte[_buffer];
                                     int bytesRead;
                                     long totalBytesWritten = 0;
-                                    while ((bytesRead = input.Read(buffer, 0, chunkSize)) > 0)
+                                    while ((bytesRead = input.Read(buffer, 0, _buffer)) > 0)
                                     {
                                         cryptoStream.Write(buffer, 0, bytesRead);
                                         totalBytesWritten += bytesRead;
@@ -171,10 +202,10 @@ namespace IFE_6._0_
                                     using (var cryptoStream = new CryptoStream(output, decryptor, CryptoStreamMode.Write))
                                     {
                                         //500000 bytes = 1mb
-                                        byte[] buffer = new byte[chunkSize];
+                                        byte[] buffer = new byte[_buffer];
                                         int bytesRead;
                                         long totalBytesWritten = 0;
-                                        while ((bytesRead = input.Read(buffer, 0, chunkSize)) > 0)
+                                        while ((bytesRead = input.Read(buffer, 0, _buffer)) > 0)
                                         {
                                             cryptoStream.Write(buffer, 0, bytesRead);
                                             totalBytesWritten += bytesRead;
