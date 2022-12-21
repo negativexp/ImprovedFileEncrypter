@@ -234,5 +234,10 @@ namespace IFE_6._0_
         {
             MessageBox.Show("Designed to Encrypt and Decrypt files using AES encryption." + Environment.NewLine + Environment.NewLine + "Tip: Use a password that you will remember because I'm not responsible for any lost files.","Created by newoutsider <3");
         }
+
+        private void Options_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
