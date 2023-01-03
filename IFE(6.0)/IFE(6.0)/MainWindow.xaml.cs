@@ -29,9 +29,12 @@ namespace IFE_6._0_
         string pass = "";
         // 4096 bytes = 4kb
         static int _buffer = 4096;
+        static string _location = "";
         BackgroundWorker worker = new BackgroundWorker();
         static List<string> ListBoxitems = new List<string>();
         static string _Title = "IFE 2.0 - made by newoutsider <3";
+        static OptionsWindow ow;
+
 
 
         public MainWindow()
@@ -41,8 +44,16 @@ namespace IFE_6._0_
             worker.DoWork += worker_DoWork;
             listboxFiles.ItemsSource = ListBoxitems;
             this.Title = _Title;
+            ow = new OptionsWindow(this);
 
         }
+
+        public void changeSettings(int buffer, string location)
+        {
+            _buffer = buffer;
+            _location = location;
+        }
+
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             for(int i = 0; i < listboxFiles.Items.Count; i++)
@@ -108,12 +119,12 @@ namespace IFE_6._0_
             try
             {
                 pass = TextBoxPassword.Text;
-                int buffer = Convert.ToInt32(TextBoxBuffer.Text);
-                if(buffer <= 0)
-                {
-                    buffer = 4096;
-                    TextBoxBuffer.Text = "4096";
-                }
+                //int buffer = Convert.ToInt32(TextBoxBuffer.Text);
+                //if(buffer <= 0)
+                //{
+                //    buffer = 4096;
+                //    TextBoxBuffer.Text = "4096";
+                //}
                 TextBlockProgress.Text = "Progress : 0% | 0/0";
                 worker.RunWorkerAsync();
             }
@@ -130,45 +141,56 @@ namespace IFE_6._0_
 
         private void EncryptFile(string inputFile, string password, int count)
         {
-            long fileSize = new FileInfo(inputFile).Length;
-            string path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileName(inputFile) + ".bin";
-            byte[] salt = new byte[16];
-            using (var rng = RandomNumberGenerator.Create())
+            try
             {
-                rng.GetBytes(salt);
-            }
-
-            using (var derive = new Rfc2898DeriveBytes(password, salt, 5000))
-            {
-                byte[] key = derive.GetBytes(32);
-                byte[] iv = derive.GetBytes(16);
-
-                using (var input = new FileStream(inputFile, FileMode.Open, FileAccess.Read))
+                long fileSize = new FileInfo(inputFile).Length;
+                string path = "";
+                if (_location == "")
                 {
-                    using (var output = new FileStream(path, FileMode.Create, FileAccess.Write))
+                    path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileName(inputFile) + ".bin";
+                }
+                else
+                {
+                    path = _location;
+                }
+                byte[] salt = new byte[16];
+                using (var rng = RandomNumberGenerator.Create())
+                {
+                    rng.GetBytes(salt);
+                }
+
+                using (var derive = new Rfc2898DeriveBytes(password, salt, 5000))
+                {
+                    byte[] key = derive.GetBytes(32);
+                    byte[] iv = derive.GetBytes(16);
+
+                    using (var input = new FileStream(inputFile, FileMode.Open, FileAccess.Read))
                     {
-                        output.Write(salt, 0, salt.Length);
-
-                        using (var aes = Aes.Create())
+                        using (var output = new FileStream(path, FileMode.Create, FileAccess.Write))
                         {
-                            aes.Key = key;
-                            aes.IV = iv;
+                            output.Write(salt, 0, salt.Length);
 
-                            using (var encryptor = aes.CreateEncryptor())
+                            using (var aes = Aes.Create())
                             {
-                                using (var cryptoStream = new CryptoStream(output, encryptor, CryptoStreamMode.Write))
-                                {
-                                    //500000 bytes = 1mb
-                                    byte[] buffer = new byte[_buffer];
-                                    int bytesRead;
-                                    long totalBytesWritten = 0;
-                                    while ((bytesRead = input.Read(buffer, 0, _buffer)) > 0)
-                                    {
-                                        cryptoStream.Write(buffer, 0, bytesRead);
-                                        totalBytesWritten += bytesRead;
-                                        double progress = (100 * totalBytesWritten) / fileSize;
+                                aes.Key = key;
+                                aes.IV = iv;
 
-                                        displayProgress(progress, count);
+                                using (var encryptor = aes.CreateEncryptor())
+                                {
+                                    using (var cryptoStream = new CryptoStream(output, encryptor, CryptoStreamMode.Write))
+                                    {
+                                        //500000 bytes = 1mb
+                                        byte[] buffer = new byte[_buffer];
+                                        int bytesRead;
+                                        long totalBytesWritten = 0;
+                                        while ((bytesRead = input.Read(buffer, 0, _buffer)) > 0)
+                                        {
+                                            cryptoStream.Write(buffer, 0, bytesRead);
+                                            totalBytesWritten += bytesRead;
+                                            double progress = (100 * totalBytesWritten) / fileSize;
+
+                                            displayProgress(progress, count);
+                                        }
                                     }
                                 }
                             }
@@ -176,13 +198,25 @@ namespace IFE_6._0_
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Something went wrong with encrypting the file.", "Encrypting error");
+            }
         }
 
         private void DecryptFile(string inputFile, string password)
         {
             try
             {
-                string path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileNameWithoutExtension(inputFile);
+                string path = "";
+                if (_location == "")
+                {
+                    path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileName(inputFile) + ".bin";
+                }
+                else
+                {
+                    path = _location;
+                }
                 byte[] salt = new byte[16];
                 using (FileStream input = new FileStream(inputFile, FileMode.Open))
                 {
@@ -237,7 +271,7 @@ namespace IFE_6._0_
 
         private void Options_Click(object sender, RoutedEventArgs e)
         {
-
+            ow.Show();
         }
     }
 }

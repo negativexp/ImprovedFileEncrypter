@@ -27,12 +27,12 @@
             </Grid.RowDefinitions>
             <DockPanel LastChildFill="True">
                 <TextBlock Text="Loaction: " DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10, 0, 5, 0"/>
-                <Button DockPanel.Dock="Right" VerticalAlignment="Center" Margin="5, 0, 10, 0" Content="Browse" Width="75" Click="Browse_Click"/>
+                <Button x:Name="ButtonBrowse" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="5, 0, 10, 0" Content="Browse" Width="75" Click="Browse_Click"/>
                 <TextBox x:Name="TextBoxLoaction" VerticalAlignment="Center" Margin="5, 0, 10, 0" IsEnabled="False"/>
             </DockPanel>
             <DockPanel Grid.Row="1">
                 <TextBlock Text="Loaction: " DockPanel.Dock="Left" VerticalAlignment="Center" Margin="10, 0, 5, 0" Visibility="Hidden"/>
-                <CheckBox Content="Same folder where input file is." VerticalAlignment="Center" Margin="5, 0, 10, 0" IsChecked="True"/>
+                <CheckBox Content="Same folder where input file is." VerticalAlignment="Center" Margin="5, 0, 10, 0" IsChecked="True" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
             </DockPanel>
         </Grid>
 
