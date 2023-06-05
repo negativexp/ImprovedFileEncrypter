@@ -58,20 +58,20 @@ namespace IFE_6._0_
         {
             for(int i = 0; i < listboxFiles.Items.Count; i++)
             {
-                if(System.IO.Path.GetExtension(listboxFiles.Items[i].ToString()) != ".bin")
+                if(System.IO.Path.GetExtension(listboxFiles.Items[i].ToString()) == ".bin")
                 {
-                    EncryptFile(listboxFiles.Items[i].ToString(), pass, i);
+                    DecryptFile(listboxFiles.Items[i].ToString(), pass);
                 }
                 else
                 {
-                    DecryptFile(listboxFiles.Items[i].ToString(), pass);
+                    EncryptFile(listboxFiles.Items[i].ToString(), pass, i);
                 }
                 if(i == listboxFiles.Items.Count - 1)
                 {
                     this.Dispatcher.Invoke(() =>
                     {
                         TextBlockProgress.Text = "Progress: " + "100%" + " " + listboxFiles.Items.Count + "/" + listboxFiles.Items.Count;
-                        MessageBox.Show("Done." + Environment.NewLine + Environment.NewLine + "Your files are encrypted...", "IFE 2.0");
+                        MessageBox.Show("Done.", "IFE 2.0");
                     });
                 }
             }
@@ -119,12 +119,7 @@ namespace IFE_6._0_
             try
             {
                 pass = TextBoxPassword.Text;
-                //int buffer = Convert.ToInt32(TextBoxBuffer.Text);
-                //if(buffer <= 0)
-                //{
-                //    buffer = 4096;
-                //    TextBoxBuffer.Text = "4096";
-                //}
+
                 TextBlockProgress.Text = "Progress : 0% | 0/0";
                 worker.RunWorkerAsync();
             }
@@ -211,7 +206,7 @@ namespace IFE_6._0_
                 string path = "";
                 if (_location == "")
                 {
-                    path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileName(inputFile) + ".bin";
+                    path = System.IO.Path.GetDirectoryName(inputFile) + "\\" + System.IO.Path.GetFileNameWithoutExtension(inputFile);
                 }
                 else
                 {

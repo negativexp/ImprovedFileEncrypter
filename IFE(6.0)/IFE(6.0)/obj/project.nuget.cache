@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "k1n2dfs+ycYnP3l2GY1UAmk+SzxUbdPQdP+s6OEgRZgW0l5+7FVr4EQQi6K6Daz4Xbl68yctP6oGNHD+zGoXbw==",
+  "dgSpecHash": "nFS9HOUlZRp/gfYTBKdKvc1yjhHahchyl6xORBNO6kNavlGvQUl5gzjl0B+PWIQymprPr+2FhqP9X/o29FUzjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matyas.schuller\\Documents\\GitHub\\ImprovedFileEncrypter\\IFE(6.0)\\IFE(6.0)\\IFE(6.0).csproj",
+  "projectFilePath": "C:\\Users\\matyas.schuller.EDU\\Documents\\GitHub\\ImprovedFileEncrypter\\IFE(6.0)\\IFE(6.0)\\IFE(6.0).csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\matyas.schuller\\.nuget\\packages\\microsoft.windowsapicodepack-core\\1.1.0\\microsoft.windowsapicodepack-core.1.1.0.nupkg.sha512",
-    "C:\\Users\\matyas.schuller\\.nuget\\packages\\microsoft.windowsapicodepack-shell\\1.1.0\\microsoft.windowsapicodepack-shell.1.1.0.nupkg.sha512"
+    "C:\\Users\\matyas.schuller.EDU\\.nuget\\packages\\microsoft.windowsapicodepack-core\\1.1.0\\microsoft.windowsapicodepack-core.1.1.0.nupkg.sha512",
+    "C:\\Users\\matyas.schuller.EDU\\.nuget\\packages\\microsoft.windowsapicodepack-shell\\1.1.0\\microsoft.windowsapicodepack-shell.1.1.0.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Balíček Microsoft.WindowsAPICodePack-Core 1.1.0 se místo cílové verze rozhraní .NET Framework projektu net6.0-windows7.0 obnovil pomocí .NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1. Balíček nemusí být plně kompatibilní s vaším projektem.",
+      "message": "Balíček Microsoft.WindowsAPICodePack-Core 1.1.0 se místo cílové verze rozhraní .NET Framework projektu net6.0-windows7.0 obnovil pomocí .NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8. Balíček nemusí být plně kompatibilní s vaším projektem.",
       "libraryId": "Microsoft.WindowsAPICodePack-Core",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -22,7 +22,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Balíček Microsoft.WindowsAPICodePack-Shell 1.1.0 se místo cílové verze rozhraní .NET Framework projektu net6.0-windows7.0 obnovil pomocí .NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1. Balíček nemusí být plně kompatibilní s vaším projektem.",
+      "message": "Balíček Microsoft.WindowsAPICodePack-Shell 1.1.0 se místo cílové verze rozhraní .NET Framework projektu net6.0-windows7.0 obnovil pomocí .NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8. Balíček nemusí být plně kompatibilní s vaším projektem.",
       "libraryId": "Microsoft.WindowsAPICodePack-Shell",
       "targetGraphs": [
         "net6.0-windows7.0"
